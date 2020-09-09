@@ -1,0 +1,22 @@
+body{
+    width:99%;
+    height: 100%;
+}
+
+.screen{
+    background-color: azure;
+    position: relative;
+    width: 350px;
+    height: 200px;
+    left: 25px;
+    top :25px;
+    border-radius: 10px;
+}
+.panel{
+    background-color: black;
+    width: 400px;
+    height: 500px;
+    position: relative;
+    left: 35%;
+    border-radius: 5px;
+}
