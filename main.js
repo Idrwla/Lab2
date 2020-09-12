@@ -8,14 +8,15 @@ function getopcode(opt) {
         if (opt == "s") {
             a.value += "**2";
         }
-        else if (opt == "-s") {
-        }
         else {
             a.value += opt;
         }
     }
     else if (opt == "(" || opt == ")") {
         a.value += opt;
+    }
+    else if (opt == '.') {
+        a.value += "0.";
     }
 }
 function zero() {
@@ -29,6 +30,9 @@ function equal() {
     var temp = eval(document.forms[0]["textview"].value);
     if (temp == "Infinity") {
         a.value = "Hа ноль нельзя делить";
+    }
+    else if (document.forms[0]["textview"].value == '') {
+        a.value = "Введите выражение";
     }
     else {
         a.value = temp;
@@ -45,8 +49,6 @@ function equal() {
         cel2.innerHTML = temp;
         clean();
     }
-    //let n  = parseInt(document.getElementById("curri").innerHTML);
-    // cel0.innerHTML =n+1;
 }
 function clean() {
     var a = document.forms[0]["textview"];

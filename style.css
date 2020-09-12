@@ -46,7 +46,7 @@ input.textview{
     position: relative;
     width: 50%;
     right: -10px;
-    bottom: -23px;
+    bottom: -20px;
 
 }
 input.res{
@@ -55,7 +55,7 @@ input.res{
     width: 30%;
     right: -15px;
 
-    bottom: -23px;
+    bottom: -20px;
 }
 input.equelp{
     box-shadow: none;
@@ -63,7 +63,7 @@ input.equelp{
     width: 10%;
     right: -14px;
 
-    bottom: -23px;
+    bottom: -20px;
 }
 .sctable{
     width: 100%;

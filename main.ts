@@ -6,11 +6,10 @@ function getvalue(num:number){
 }
 function getopcode(opt:string){
     let a:any = document.forms[0]["textview"];
+
     if(a.value!=""){
         if(opt=="s"){
             a.value+="**2";
-        }else if(opt=="-s"){
-
         }
         else {
             a.value+=opt;
@@ -18,6 +17,10 @@ function getopcode(opt:string){
 
     }else if(opt=="(" || opt==")"){
         a.value+=opt;
+    }
+    else if(opt=='.'){
+        a.value+="0.";
+
     }
 
 }
@@ -27,13 +30,18 @@ function zero(){
         a.value+="0";
     }
 }
-function equal(){
+function equal():any{
     let a:any = document.forms[0]["result"];
-    let temp = eval(document.forms[0]["textview"].value);
+    let temp:any = eval(document.forms[0]["textview"].value);
+
     if(temp=="Infinity"){
         a.value = "Hа ноль нельзя делить";
+    }else if(document.forms[0]["textview"].value==''){
+        a.value ="Введите выражение";
 
-    }else{
+    }
+    else{
+
         a.value = temp;
         let table:any =document.getElementsByTagName("table")[0];
         if(table.rows.length>=3){
@@ -49,12 +57,6 @@ function equal(){
         clean();
     }
 
-
-
-
-
-    //let n  = parseInt(document.getElementById("curri").innerHTML);
-   // cel0.innerHTML =n+1;
 }
 function clean(){
     let a:any = document.forms[0]["textview"];
