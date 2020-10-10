@@ -1,5 +1,4 @@
 
-
 function getvalue(num:number){
     let a:any = document.forms[0]["textview"];
     a.value+=num;
@@ -69,4 +68,10 @@ function back(){
     a.value= document.forms[0]["textview"].value.substring(0,document.forms[0]["textview"].value.length-1);
     let b:any = document.forms[0]["result"];
     b.value='';
+}
+function sinus(x:number){
+    let a:any = document.forms[0]["textview"];
+    a.value = Math.sin(x);
+
+
 }

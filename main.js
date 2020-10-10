@@ -1,7 +1,15 @@
+var pi  = 'п'
 function getvalue(num) {
     var a = document.forms[0]["textview"];
     a.value += num;
+
 }
+function get_symbyl(){
+    var a = document.forms[0]["textview"];
+    a.value='п';
+
+}
+var i =0;
 function getopcode(opt) {
     var a = document.forms[0]["textview"];
     if (a.value != "") {
@@ -17,7 +25,11 @@ function getopcode(opt) {
     }
     else if (opt == '.') {
         a.value += "0.";
+    }else if(opt=='ss'){
+        a.value+= 'Math.sqrt(';
+        i=1;
     }
+
 }
 function zero() {
     var a = document.forms[0]["textview"];
@@ -27,6 +39,13 @@ function zero() {
 }
 function equal() {
     var a = document.forms[0]["result"];
+    var b =document.forms[0]["textview"];
+    let c = b.value.replace(pi,'3.14');
+    a.value = c;
+    if(i==1){
+        b.value+=')';
+    }
+
     var temp = eval(document.forms[0]["textview"].value);
     if (temp == "Infinity") {
         a.value = "Hа ноль нельзя делить";
@@ -62,3 +81,9 @@ function back() {
     var b = document.forms[0]["result"];
     b.value = '';
 }
+function sinus(x) {
+    var a = document.forms[0]["textview"];
+    a.value = Math.sin(x);
+
+}
+
